@@ -1,0 +1,22 @@
+cabal-version:       2.4
+name:                penchain
+version:             0.1.0.0
+build-type:          Simple
+
+executable penchain-cardano
+  main-is:             Main.hs
+  hs-source-dirs:      src
+  default-language:    GHC2021
+  other-modules:
+      SLA
+      Reputation
+      ServiceAggregation
+      Ranking
+  build-depends:
+      base >=4.14 && <5,
+      containers,
+      text,
+      plutus-ledger-api,
+      plutus-tx,
+      plutus-script-utils
+

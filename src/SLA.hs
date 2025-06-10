@@ -25,7 +25,7 @@ data SLAParams = SLAParams
     , penaltyAmount         :: Integer
     , slaDeadline           :: POSIXTime
     , ruleAbidingRateThreshold :: Integer
-    }
+    } deriving Show
 
 PlutusTx.makeLift ''SLAParams
 
@@ -34,7 +34,7 @@ data SLADatum = SLADatum
     , isPenaltyPaid   :: Bool
     , ruleAbidingRate :: Integer
     , transactionCount :: Integer
-    }
+    } deriving Show
 
 PlutusTx.unstableMakeIsData ''SLADatum
 
