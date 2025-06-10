@@ -76,8 +76,12 @@ main :: IO ()
 main = do
     let initialState = initPenChainState
         stateWithSLA = registerSLA exampleSLAParams initialState
-        stateWithUpdatedSLA = updateSLAState exampleSLAParams exampleSLADatum stateWithSLA
-        finalState = updateServiceRankings [RuleAbidingRate, Satisfaction, Cost] stateWithUpdatedSLA
+        stateWithUpdatedSLA =
+            updateSLAState exampleSLAParams exampleSLADatum stateWithSLA
+        finalState =
+            updateServiceRankings
+                [RuleAbidingRate, Satisfaction, Cost]
+                stateWithUpdatedSLA
     
     putStrLn "Registered SLAs:"
     print $ registeredSLAs finalState
